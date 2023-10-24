@@ -1,0 +1,27 @@
+/* 
+-------------------------------------
+							HEADER
+-------------------------------------
+*/
+.logo {
+	font-size: 1.75rem;
+	font-family: "KoHo", sans-serif;
+}
+
+header {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	gap: 3.5rem;
+	align-items: center;
+	height: 5rem;
+}
+
+.nav {
+	display: flex;
+	gap: 1.5rem;
+
+	a:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.5rem;
+	}
+}

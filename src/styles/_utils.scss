@@ -1,0 +1,11 @@
+.highlight {
+	color: var(--color, var(--green));
+
+	&--green {
+		--color: var(--green);
+	}
+
+	&--yellow {
+		--color: var(--yellow);
+	}
+}
