@@ -16,16 +16,25 @@ body {
 	color: var(--color);
 }
 
-#root > *:not(.full-bleed) {
-	padding-inline: max(2rem, 50% - 1180px / 2);
+#root {
+	--max-width: max(2rem, 50% - 1180px / 2);
+
+	> *:not(.full-bleed) {
+		padding-inline: var(--max-width);
+	}
 }
 
 :where(h1, h2, h3) {
 	font-family: 'KoHo', sans-serif;
+	color: white;
 }
 
 h1 {
 	font-size: clamp(2.5rem, 1.2558rem + 3.7209vw, 5rem);
+}
+
+h3 {
+	font-size: clamp(1.5rem, 0.9419rem + 2.7907vw, 2.25rem);
 }
 
 section {

@@ -26,7 +26,7 @@ const categories = [
 ]
 const Categories = () => {
 	return (
-		<section className="categories-section" id="categories">
+		<section className="categories-section full-bleed" id="categories">
 			<h3>Explore Top Categories</h3>
 			<p>Click on the categories and explore all courses</p>
 			<div className="categories__wrapper">
