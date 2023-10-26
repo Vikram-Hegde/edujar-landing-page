@@ -1,11 +1,28 @@
 .highlight {
-	color: var(--color, var(--green));
-
 	&--green {
-		--color: var(--green);
+		color: var(--green);
 	}
 
 	&--yellow {
-		--color: var(--yellow);
+		color: var(--yellow);
+	}
+}
+
+.glow {
+	position: relative;
+
+	&::after {
+		content: '';
+		display: inline-flex;
+		position: absolute;
+		width: calc(100% - 10rem);
+		height: calc(100% + 4rem);
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		border-radius: 50%;
+		z-index: -1;
+		background: rgba(214, 255, 194, 0.15);
+		filter: blur(75px);
 	}
 }

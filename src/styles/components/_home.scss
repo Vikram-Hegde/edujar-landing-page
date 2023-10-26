@@ -1,0 +1,121 @@
+.home-section {
+	display: grid;
+	justify-items: center;
+	align-content: start;
+	gap: 3rem;
+
+	h1 {
+		text-align: center;
+	}
+
+	.highlight--yellow {
+		background-image: url("data:image/svg+xml,%3Csvg width='214' height='21' viewBox='0 0 214 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 17C49.2576 8.94814 153.818 -3.68322 210 10.2062' stroke='%23EFA02A' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		padding-bottom: 0.5rem;
+	}
+
+	p {
+		font-weight: 500;
+		font-size: clamp(1rem, 0.8605rem + 0.6977vw, 1.275rem);
+	}
+
+	form {
+		background-color: var(--accent-light);
+		display: flex;
+		gap: 1rem;
+		padding: 0.5rem;
+		padding-left: 2rem;
+		border-radius: 9999px;
+		width: min(100%, 30rem);
+		justify-content: space-between;
+	}
+
+	input {
+		background-color: transparent;
+		border: none;
+		width: 100%;
+		outline: none;
+		color: var(--color);
+
+		&::placeholder {
+			font-style: italic;
+			font-size: 0.9rem;
+			color: inherit;
+		}
+	}
+
+	.btn {
+		padding: 0.5rem 0.75rem;
+		font-family: Inter;
+	}
+
+	.gradient {
+		height: 11rem;
+	}
+}
+
+.badges {
+	margin-block: 4rem;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+
+	.wider {
+		grid-column: span 2;
+	}
+
+	.badge {
+		display: grid;
+		place-content: center;
+		text-align: center;
+		padding-block: 1.25rem;
+		color: white;
+		font-weight: 500;
+	}
+	.badge:nth-child(even) {
+		background-color: var(--green);
+		translate: 0 1.75rem;
+	}
+	.badge:nth-child(odd) {
+		background-color: var(--accent-light);
+	}
+
+	.count {
+		font-size: 1.75rem;
+		font-weight: bold;
+		font-family: 'KoHo';
+		margin-block-end: 0.6rem;
+	}
+
+	.heading {
+		--gap: 7rem;
+		display: flex;
+		gap: var(--gap);
+		font-size: 1.75rem;
+		margin-block-end: 0.6rem;
+	}
+
+	.reviewer {
+		position: relative;
+		display: flex;
+
+		&::after {
+			position: absolute;
+			content: '';
+			display: inline-flex;
+			height: 1px;
+			width: calc(var(--gap) - 2rem);
+			left: calc(100% + 1rem);
+			background-color: var(--color);
+			align-self: center;
+		}
+	}
+
+	.rating {
+		font-weight: bold;
+	}
+
+	span {
+		color: var(--color);
+	}
+}

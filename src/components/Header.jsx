@@ -2,7 +2,7 @@ const Header = () => {
 	return (
 		<header>
 			<div className="logo">
-				Edu<span className="highlight highlight--green">jar</span>
+				Edu<span className="highlight--green">jar</span>
 			</div>
 			<ul role="list" className="nav">
 				<li><a href="#home">Home</a></li>
