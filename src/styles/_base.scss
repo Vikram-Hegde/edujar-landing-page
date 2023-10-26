@@ -24,7 +24,7 @@ body {
 	}
 }
 
-:where(h1, h2, h3) {
+h1, h2, h3, h4 {
 	font-family: 'KoHo', sans-serif;
 	color: white;
 }
@@ -35,6 +35,17 @@ h1 {
 
 h3 {
 	font-size: clamp(1.5rem, 0.9419rem + 2.7907vw, 2.25rem);
+}
+
+h4 {
+	font-size: clamp(1rem, 0.9419rem + 2.7907vw, 1.25rem);
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: hsl(240 64% 91% / 0.3);
+	margin-block: 1.25rem
 }
 
 section {
@@ -79,4 +90,14 @@ section {
 	&--green {
 		--bg-color: var(--green);
 	}
+}
+
+.left-icon, .right-icon {
+	width: 2.25rem;
+	height: auto;
+	background-color: transparent;
+	border: none;
+	padding: 0.25rem;
+	border-radius: 50%;
+	cursor: pointer;
 }

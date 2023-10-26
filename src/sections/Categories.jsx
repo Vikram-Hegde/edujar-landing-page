@@ -30,9 +30,9 @@ const Categories = () => {
 			<h3>Explore Top Categories</h3>
 			<p>Click on the categories and explore all courses</p>
 			<div className="categories__wrapper">
-				<div className="left-icon">
+				<button className="left-icon">
 					<img src="/icons/left-chevron.svg" />
-				</div>
+				</button>
 				<div className="categories">
 					{categories.map((category) => (
 						<div className="category" key={category.text}>
@@ -43,9 +43,9 @@ const Categories = () => {
 						</div>
 					))}
 				</div>
-				<div className="right-icon">
+				<button className="right-icon">
 					<img src="/icons/right-chevron.svg" />
-				</div>
+				</button>
 			</div>
 		</section>
 	)

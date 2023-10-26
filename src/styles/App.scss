@@ -1,8 +1,9 @@
-@use './utils';
 @use './resets';
+@use './utils';
 @use './base';
 
-// Components
-@use './components/header';
-@use './components/home';
-@use './components/categories'
+// Pages
+@use './sections/header';
+@use './sections/home';
+@use './sections/categories';
+@use './sections/courses';

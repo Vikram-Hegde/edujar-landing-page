@@ -1,6 +1,7 @@
-import Categories from './components/Categories'
-import Header from './components/Header'
-import Home from './components/Home'
+import Courses from './sections/Courses'
+import Categories from './sections/Categories'
+import Header from './sections/Header'
+import Home from './sections/Home'
 import './styles/App.scss'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 			<Header />
 			<Home />
 			<Categories />
+			<Courses />
 		</>
 	)
 }
