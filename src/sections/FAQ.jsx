@@ -46,6 +46,7 @@ const FAQ = () => {
 				))}
 			</div>
 			<div className="testimonial__wrapper">
+				<img src="/icons/Polygon.svg" className="illustration" />
 				<h2>What our client&apos;s say</h2>
 				<img className="quote" src="/icons/quote.svg" alt="quote" />
 				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>

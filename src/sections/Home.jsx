@@ -2,6 +2,12 @@ const Home = () => {
 	return (
 		<>
 			<section className="home-section" id="home">
+				<div className="illustration illustration-one">
+					<img src="/icons/StarsGroup1.svg" />
+				</div>
+				<div className="illustration illustration-two">
+					<img src="/icons/StarsGroup2.svg" />
+				</div>
 				<h1 className="glow">
 					Learn with us anywhere with the best{' '}
 					<span className="highlight--yellow">experts</span>
@@ -13,6 +19,9 @@ const Home = () => {
 						Explore
 					</button>
 				</form>
+					<div className="arrow">
+						<img src="/icons/arrow.svg" />
+					</div>
 			</section>
 			<div className="badges full-bleed">
 				<div className="badge">
@@ -26,7 +35,9 @@ const Home = () => {
 				<div className="badge wider">
 					<div className="heading">
 						<div className="reviewer">Trustpilot</div>
-						<div className="rating">4.9</div>
+						<div className="rating">
+							4.9 <img src="/icons/Star.svg" alt="" />
+						</div>
 					</div>
 					<span>
 						<a href="#">View our 1,602 reviews</a>

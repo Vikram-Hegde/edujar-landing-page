@@ -93,7 +93,7 @@ picture {
   --accent-light: hsl(214, 24%, 32%);
   --yellow: hsl(38, 95%, 60%);
   --green: hsl(153, 69%, 42%);
-  --color: #D9ECFF;
+  --color: #d9ecff;
 }
 
 html {
@@ -207,9 +207,26 @@ header {
   align-items: center;
   height: 5rem;
 }
+@media (max-width: 895px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo logo" "nav button";
+    gap: 1rem;
+  }
+  header .logo {
+    grid-area: logo;
+  }
+  header button {
+    grid-area: button;
+  }
+  header .nav {
+    grid-area: nav;
+  }
+}
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 .nav a:hover {
@@ -222,6 +239,24 @@ header {
   justify-items: center;
   align-content: start;
   gap: 3rem;
+  position: relative;
+}
+.home-section .illustration {
+  position: absolute;
+  align-self: center;
+  z-index: -1;
+  top: -8rem;
+  max-width: 1500px;
+}
+@media (max-width: 1000px) {
+  .home-section .illustration {
+    display: none;
+  }
+}
+.home-section .arrow {
+  width: 100px;
+  position: absolute;
+  bottom: -1.75rem;
 }
 .home-section h1 {
   text-align: center;
@@ -237,6 +272,7 @@ header {
   font-size: clamp(1rem, 0.8605rem + 0.6977vw, 1.275rem);
 }
 .home-section form {
+  position: relative;
   background-color: var(--accent-light);
   display: flex;
   gap: 1rem;
@@ -323,6 +359,12 @@ header {
 }
 .badges .rating {
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.badges .rating img {
+  width: 28px;
 }
 .badges span {
   color: var(--color);
@@ -609,6 +651,12 @@ header {
   flex-direction: column;
   gap: 1rem;
 }
+.faq-section .testimonial__wrapper .illustration {
+  position: absolute;
+  right: 5rem;
+  max-inline-size: 60px;
+  top: 2rem;
+}
 .faq-section .testimonial__wrapper img {
   margin-inline: auto;
 }
@@ -652,21 +700,19 @@ footer {
   background-color: #20344a;
   padding-block: 3rem;
 }
-footer img {
-  flex-shrink: 0;
-}
 footer .companies {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
   overflow-x: auto;
 }
 footer .companies img {
-  display: inline;
+  display: inline-block;
   width: 9rem;
   vertical-align: middle;
   margin-inline: 1rem;
+  flex-shrink: 0;
 }
 footer .companies__wrapper {
   display: flex;
@@ -681,7 +727,7 @@ footer form button {
 }
 footer section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
   justify-items: center;
 }
