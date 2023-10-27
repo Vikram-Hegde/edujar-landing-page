@@ -21,10 +21,10 @@
 			position: absolute;
 			inset: 0;
 			z-index: -1;
-			background: var(--accent-light) url('/images/background_pattern.png')
+			background: #20344A url('/images/background_pattern.png')
 				no-repeat 50% 50% / cover;
 			background-blend-mode: multiply;
-			opacity: 0.3;
+			opacity: 0.5;
 		}
 	}
 
