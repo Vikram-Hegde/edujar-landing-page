@@ -209,30 +209,6 @@ section {
   font-family: "KoHo", sans-serif;
 }
 
-header {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 3.5rem;
-  align-items: center;
-  height: 5rem;
-}
-@media (max-width: 895px) {
-  header {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo logo" "nav button";
-    gap: 1rem;
-  }
-  header .logo {
-    grid-area: logo;
-  }
-  header button {
-    grid-area: button;
-  }
-  header .nav {
-    grid-area: nav;
-  }
-}
-
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -241,6 +217,67 @@ header {
 .nav a:hover {
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 3.5rem;
+  align-items: center;
+  min-block-size: 5rem;
+  padding: 0.75rem 0;
+  position: relative;
+}
+header .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .icon-tabler {
+  display: none;
+}
+@media (max-width: 895px) {
+  header {
+    display: flex;
+    align-content: start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  header .icon {
+    display: inline-flex;
+    order: 1;
+  }
+  header .nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    transform: translate3d(0, -3rem, 3rem) scale(0.8);
+    perspective: 1000px;
+    pointer-events: none;
+    transition: transform 150ms ease-in-out;
+  }
+  header .nav.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    pointer-events: auto;
+  }
+  header button {
+    justify-self: center;
+  }
+  header .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 2rem 0;
+    width: 100%;
+    background-color: white;
+    color: var(--accent);
+    z-index: 10;
+  }
+  header button {
+    order: 1;
+  }
 }
 
 .home-section {
@@ -625,7 +662,7 @@ header {
 }
 .faq-section .gradient-blur:not(:first-child) {
   left: 100%;
-  top: 60%;
+  top: 45%;
 }
 .faq-section h2 {
   margin-block: 1rem 1.5rem;
