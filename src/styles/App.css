@@ -316,6 +316,7 @@ header .icon-tabler {
 .home-section p {
   font-weight: 500;
   font-size: clamp(1rem, 0.8605rem + 0.6977vw, 1.275rem);
+  text-align: center;
 }
 .home-section form {
   position: relative;
@@ -403,6 +404,28 @@ header .icon-tabler {
   background-color: var(--color);
   align-self: center;
 }
+@media (max-width: 1100px) {
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .badges .badge {
+    flex: 1 1 250px;
+  }
+  .badges .badge:nth-child(even) {
+    translate: 0 0;
+  }
+  .badges .wider {
+    grid-column: span 1;
+  }
+  .badges .heading {
+    --gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .badges .reviewer::after {
+    display: none;
+  }
+}
 .badges .rating {
   font-weight: bold;
   display: flex;
@@ -421,6 +444,7 @@ header .icon-tabler {
 }
 .categories-section p {
   margin-block-start: 1rem;
+  padding-inline: 1rem;
 }
 .categories-section .categories__wrapper {
   display: grid;
@@ -472,20 +496,38 @@ header .icon-tabler {
 .courses-section {
   display: grid;
   position: relative;
-  overflow-x: hidden;
 }
 .courses-section .header {
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-areas: "heading para icon";
+}
+.courses-section .header h3 {
+  grid-area: heading;
 }
 .courses-section .header p {
   width: min(20rem, 100%);
   margin-inline-start: 5rem;
+  grid-area: para;
 }
 .courses-section .header .left-icon,
 .courses-section .header .right-icon {
   background-color: var(--accent-light);
   margin-inline-start: 0.75rem;
+  grid-area: icon;
+}
+@media (max-width: 767px) {
+  .courses-section .header {
+    grid-template-columns: auto auto;
+    grid-template-areas: "heading icon" "para para";
+    row-gap: 1rem;
+  }
+  .courses-section .header .icons {
+    justify-self: end;
+  }
+  .courses-section .header p {
+    margin: 0;
+  }
 }
 .courses-section .cards {
   display: grid;
@@ -574,7 +616,6 @@ header .icon-tabler {
 }
 
 .process-section {
-  overflow-x: hidden;
   position: relative;
 }
 .process-section::before {
@@ -599,34 +640,62 @@ header .icon-tabler {
 .process-section .header {
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-areas: "heading para img";
+  align-items: center;
+}
+.process-section .header h3 {
+  grid-area: heading;
 }
 .process-section .header p {
   width: min(23rem, 100%);
   margin-inline-start: 5rem;
+  grid-area: para;
 }
 .process-section .header img {
   width: 5rem;
   height: auto;
+  grid-area: img;
+  justify-self: end;
+}
+@media (max-width: 880px) {
+  .process-section .header {
+    grid-template-columns: auto auto;
+    grid-template-areas: "heading img" "para .";
+    gap: 1rem;
+  }
+  .process-section .header p {
+    margin: 0;
+  }
+  .process-section .header img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
 }
 .process-section .procedure__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(590px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
   margin-block-start: 3rem;
   align-items: center;
+  justify-items: center;
+  gap: 2rem;
 }
 .process-section .procedure {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
 }
 .process-section .process {
   display: grid;
   grid-template-areas: "icon heading" "icon description";
-  width: min(450px, 100%);
   gap: 1rem;
   background-color: var(--accent-light);
   padding: 1.5rem;
   border-radius: 1rem;
+}
+@media (max-width: 570px) {
+  .process-section .process {
+    grid-template-areas: "icon ." "heading heading" "description description";
+  }
 }
 .process-section .process .icon {
   grid-area: icon;
