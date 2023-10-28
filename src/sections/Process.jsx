@@ -1,3 +1,5 @@
+import Gradient from "../components/Gradient"
+
 const procedure = [
 	{
 		icon: 'signup',
@@ -30,6 +32,7 @@ const Process = () => {
 
 				<img src="/images/Video.png" alt="play video" />
 			</div>
+			<Gradient />
 			<div className="procedure__wrapper">
 				<div className="procedure">
 					{procedure.map((process) => (

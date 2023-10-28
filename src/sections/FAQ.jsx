@@ -1,3 +1,5 @@
+import Gradient from '../components/Gradient'
+
 const faq = [
 	{
 		title: 'Can Conversix sync my data to my CRM?',
@@ -23,6 +25,7 @@ const faq = [
 const FAQ = () => {
 	return (
 		<section className="faq-section" id="faq">
+			<Gradient />
 			<div className="header">
 				<div className="sub-heading">Frequently asked questions</div>
 				<h2>
@@ -31,7 +34,6 @@ const FAQ = () => {
 					Find here.
 				</h2>
 				<button className="btn btn--yellow">Send Message</button>
-				<img className="point-illustration" src="/images/point-illustration.png" alt="pointing to questions and answers" />
 			</div>
 			<div className="accordian">
 				{faq.map((qnA, idx) => (
@@ -45,11 +47,22 @@ const FAQ = () => {
 					</details>
 				))}
 			</div>
+			<Gradient />
 			<div className="testimonial__wrapper">
-				<img src="/icons/Polygon.svg" className="illustration" />
+				<img
+					className="point-illustration"
+					src="/images/point-illustration.png"
+					alt="pointing to questions and answers"
+				/>
+				<img src="/icons/Polygon.svg" className="polygon-illustration" />
 				<h2>What our client&apos;s say</h2>
 				<img className="quote" src="/icons/quote.svg" alt="quote" />
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+				<p>
+					
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+					dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim.
+				</p>
 				<div className="author">Adrian Smith</div>
 				<div className="reviewer__wrapper">
 					<button className="left-icon">

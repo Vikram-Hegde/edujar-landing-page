@@ -1,3 +1,5 @@
+import Gradient from "../components/Gradient"
+
 const cards = [
 	{
 		lesson: 25,
@@ -69,6 +71,7 @@ const Courses = () => {
 				</div>
 			</div>
 			<div className="cards">
+				<Gradient />
 				{cards.map((card, idx) => (
 					<div className="card" key={idx}>
 						<div className="header">
@@ -110,6 +113,7 @@ const Courses = () => {
 				))}
 			</div>
 			<button className="btn btn--outline">Explore Courses</button>
+			<Gradient />
 		</section>
 	)
 }

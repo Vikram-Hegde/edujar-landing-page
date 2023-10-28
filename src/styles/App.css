@@ -65,12 +65,7 @@ picture {
   color: var(--yellow);
 }
 
-.glow {
-  position: relative;
-}
-.glow::after {
-  content: "";
-  display: inline-flex;
+footer::before, footer::after, .glow::after, .gradient-blur {
   position: absolute;
   width: calc(100% - 10rem);
   height: calc(100% + 4rem);
@@ -81,6 +76,20 @@ picture {
   z-index: -1;
   background: rgba(214, 255, 194, 0.15);
   filter: blur(75px);
+}
+
+@media (min-width: 1920px) {
+  .gradient-blur {
+    display: none;
+  }
+}
+
+.glow {
+  position: relative;
+}
+.glow::after {
+  content: "";
+  display: inline-flex;
 }
 
 /* 
@@ -96,7 +105,7 @@ picture {
   --color: #d9ecff;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -425,6 +434,8 @@ header {
 
 .courses-section {
   display: grid;
+  position: relative;
+  overflow-x: hidden;
 }
 .courses-section .header {
   display: grid;
@@ -441,9 +452,24 @@ header {
 }
 .courses-section .cards {
   display: grid;
+  position: relative;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-block: 4rem;
+}
+.courses-section .gradient-blur {
+  height: 12rem;
+  width: 90%;
+  left: 0;
+  top: 2rem;
+  filter: blur(100px);
+}
+.courses-section .gradient-blur:not(:first-child) {
+  filter: blur(100%);
+  height: 60%;
+  width: 10rem;
+  left: 100%;
+  top: 50%;
 }
 .courses-section .card {
   padding: 1rem;
@@ -511,6 +537,7 @@ header {
 }
 
 .process-section {
+  overflow-x: hidden;
   position: relative;
 }
 .process-section::before {
@@ -519,12 +546,18 @@ header {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #20344A url("/images/background_pattern.png") no-repeat 50% 50%/cover;
+  background: #20344a url("/images/background_pattern.png") no-repeat 50% 50%/cover;
   background-blend-mode: multiply;
   opacity: 0.5;
 }
 .process-section .illustration {
   width: min(500px, 100%);
+}
+.process-section .gradient-blur {
+  height: 60%;
+  width: 10rem;
+  left: 0;
+  filter: blur(80px);
 }
 .process-section .header {
   display: grid;
@@ -580,6 +613,19 @@ header {
   grid-template-columns: 1fr 1.5fr;
   grid-template-areas: "heading accordian";
   align-items: start;
+  position: relative;
+  overflow-x: hidden;
+}
+.faq-section .gradient-blur {
+  filter: blur(100px);
+  width: 10rem;
+  height: 50%;
+  left: 0;
+  top: 30%;
+}
+.faq-section .gradient-blur:not(:first-child) {
+  left: 100%;
+  top: 60%;
 }
 .faq-section h2 {
   margin-block: 1rem 1.5rem;
@@ -587,13 +633,6 @@ header {
 .faq-section .header {
   grid-area: heading;
   position: relative;
-}
-.faq-section .header .point-illustration {
-  position: absolute;
-  right: 2rem;
-  max-width: 203px;
-  top: 7rem;
-  z-index: -1;
 }
 .faq-section .header button {
   padding: 0.5rem 1rem;
@@ -651,7 +690,14 @@ header {
   flex-direction: column;
   gap: 1rem;
 }
-.faq-section .testimonial__wrapper .illustration {
+.faq-section .testimonial__wrapper .point-illustration {
+  position: absolute;
+  max-width: 203px;
+  left: 15rem;
+  bottom: 100%;
+  z-index: -1;
+}
+.faq-section .testimonial__wrapper .polygon-illustration {
   position: absolute;
   right: 5rem;
   max-inline-size: 60px;
@@ -699,6 +745,19 @@ header {
 footer {
   background-color: #20344a;
   padding-block: 3rem;
+  position: relative;
+}
+footer::before, footer::after {
+  content: "";
+  display: inline-flex;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 20rem;
+  filter: blur(100px);
+}
+footer::after {
+  left: 100%;
 }
 footer .companies {
   flex: 1 1 auto;
